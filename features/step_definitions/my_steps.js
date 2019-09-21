@@ -1,6 +1,6 @@
-//import { expect } from 'chai';
-//import { HomePage } from './pages';
-var HomePage = require('../pages');
+import { expect } from 'chai';
+import { HomePage } from './pages';
+//var HomePage = require('../pages');
 
 const { Given, When, Then } = require('cucumber');
 
@@ -16,20 +16,20 @@ When(/^User click on the (\S+)$/, (element) => {
     }
     if (element === 'contactForm') {
         console.log('contact');
-        //homePO.contactButton.click();
+        homePO.contactButton.click();
     }
 });
 
 When(/^(\S+) is visible$/, (element) => {
     if (element === 'WidgetsMenu') {
         console.log('Widgets menu');
-        //expect(homePO.navigationMenu.waitForExist()).to.be.true;
+        expect(homePO.navigationMenu.waitForExist()).to.be.true;
     } else if (element === 'SidebarMenu') {
         console.log('side bar');
-        //expect(homePO.sidebarMenu.waitForEnabled()).to.equal(true);
+        expect(homePO.sidebarMenu.waitForEnabled()).to.equal(true);
     } else if (element === 'Logo') {
         console.log('logo');
-        //expect(homePO.logo.waitForExist()).to.be.true;
+        expect(homePO.logo.waitForExist()).to.be.true;
     }
 });
 
